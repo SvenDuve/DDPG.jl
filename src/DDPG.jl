@@ -20,7 +20,11 @@ export  agent,
         train_step!
 
 
-        
+"""
+    setCritic(state_size, action_size)
+
+Set a critic model for the DDPG agent.
+"""
 function setCritic(state_size, action_size)
 
     # working basic config
@@ -34,6 +38,11 @@ function setCritic(state_size, action_size)
 end
 
 
+"""
+    setActor(state_size, action_size)
+
+Set an actor model for the DDPG agent.
+"""
 function setActor(state_size, action_size)
 
     return Chain(Dense(state_size, 64, relu),
@@ -48,7 +57,11 @@ end
 
 
 
-# Define the action, actor_loss, and critic_loss functions
+"""
+    action(model, state, train, ep, hp)
+
+Returns an action based on the current state, noise and the model.
+"""
 function action(model, state, train, ep, hp)
     if train
         a = model(state) .+ clamp.(rand(Distributions.Normal{Float32}(0.f0, hp.expl_noise), size(ep.action_size)), -hp.noise_clip, hp.noise_clip)
@@ -59,7 +72,11 @@ function action(model, state, train, ep, hp)
 end
 
 
+"""
+    soft_update!(target_model, main_model, τ)
 
+Soft update of the target model.
+"""
 function soft_update!(target_model, main_model, τ)
     for (target_param, main_param) in zip(Flux.params(target_model), Flux.params(main_model))
         target_param .= τ * main_param .+ (1 - τ) * target_param
@@ -77,7 +94,11 @@ function verify_update(target_model, main_model)
 end
 
 
+"""
+    train_step!(S, A, R, S´, T, μθ, μθ´, Qϕ, Qϕ´, opt_critic, opt_actor, ap::Parameter)
 
+Train the DDPG agent with gradient descent.
+"""
 function train_step!(S, A, R, S´, T, μθ, μθ´, Qϕ, Qϕ´, opt_critic, opt_actor, ap::Parameter)
 
     Y = R' .+ ap.γ * (1 .- T)' .* Qϕ´(vcat(S´, μθ´(S´)))   
@@ -96,7 +117,11 @@ function train_step!(S, A, R, S´, T, μθ, μθ´, Qϕ, Qϕ´, opt_critic, opt_
 
 end
 
+"""
+    agent(environment::ContinuousEnvironment, agentParams::AgentParameter)
 
+Main DDPG Algorithm to train an agent.
+"""
 function agent(environment::ContinuousEnvironment, agentParams::AgentParameter)
 
     gym = pyimport("gymnasium")
