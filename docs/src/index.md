@@ -36,7 +36,7 @@ using Pkg
 Pkg.add(url="https://github.com/SvenDuve/RLTypes.jl")
 Pkg.add("Conda")
 Pkg.add("PyCall")
-````
+```
 
 Then again within julia,
 
