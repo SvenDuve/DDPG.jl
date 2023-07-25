@@ -60,6 +60,7 @@ Once the above is installed, the following code can be used to train an agent:
 
 ```julia
 using DDPG
+using RLTypes
 agent(LunarLander(), AgentParameter(training_episodes=100, batch_size=128))
 ```
 
