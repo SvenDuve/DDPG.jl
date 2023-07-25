@@ -249,22 +249,6 @@ function agent(environment::ContinuousEnvironment, agentParams::AgentParameter)
 end
 
 
-# Works
-# hp = agent("BipedalWalker-v3", HyperParameter(expl_noise=0.1f0, noise_clip=0.3f0, training_episodes=2000, maximum_episode_length=3000, train_start=20, batch_size=128, critic_η=0.0001, actor_η=0.0001))
-# hp = agent("Pendulum-v1", HyperParameter(expl_noise=0.2f0, noise_clip=0.5f0, training_episodes=300, maximum_episode_length=3000, train_start=20, batch_size=128))
-# hp = agent("LunarLander-v2", HyperParameter(expl_noise=0.2f0, training_episodes=1000, maximum_episode_length=3000, train_start=20, batch_size=128, critic_η=0.0001, actor_η=0.0001))
-
-
-# hp = agent("MountainCarContinuous-v0", HyperParameter(expl_noise=0.2f0, noise_clip=0.5f0, training_episodes=300, maximum_episode_length=3000, train_start=20, batch_size=128))
-
-
-# hp = agent(DDPG(), "BipedalWalker-v3", HyperParameter(expl_noise=0.2f0, noise_clip=0.5f0, training_episodes=200, maximum_episode_length=1000, train_start=20, batch_size=64, store_frequency=20))
-# hp = agent("Pendulum-v1", HyperParameter(expl_noise=0.2f0, noise_clip=0.5f0, training_episodes=200, maximum_episode_length=1000, train_start=20, batch_size=64, store_frequency=20))
-
-# Workds
-# aP = agent(Pendulum(), AgentParameter(training_episodes=500))
-# aP = agent(LunarLanderContinuous(), AgentParameter(training_episodes=500))
-
 
 
 function renderEnv(environment::ContinuousEnvironment, policy, seed=42)
@@ -273,8 +257,6 @@ function renderEnv(environment::ContinuousEnvironment, policy, seed=42)
     
     if environment isa LunarLanderContinuous
         global env = gym.make("LunarLander-v2", continuous = true, render_mode="human")
-    elseif environment isa BipedalWalker
-        global env = gym.make("BipedalWalker-v3", render_mode="human")
     elseif environment isa Pendulum
         global env = gym.make("Pendulum-v1", render_mode="human")
     else
