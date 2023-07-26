@@ -97,9 +97,9 @@ version = "0.3.0"
 
 [[Compat]]
 deps = ["UUIDs"]
-git-tree-sha1 = "4e88377ae7ebeaf29a047aa1ee40826e0b708a5d"
+git-tree-sha1 = "5ce999a19f4ca23ea484e92a1774a61b8ca4cf8e"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
-version = "4.7.0"
+version = "4.8.0"
 weakdeps = ["Dates", "LinearAlgebra"]
 
     [Compat.extensions]
@@ -123,9 +123,9 @@ version = "0.1.2"
 
 [[Conda]]
 deps = ["Downloads", "JSON", "VersionParsing"]
-git-tree-sha1 = "915ebe6f0e7302693bdd8eac985797dba1d25662"
+git-tree-sha1 = "8c86e48c0db1564a1d49548d3515ced5d604c408"
 uuid = "8f4d0f93-b110-5947-807f-2305c1781a2d"
-version = "1.9.0"
+version = "1.9.1"
 
 [[ConstructionBase]]
 deps = ["LinearAlgebra"]
@@ -242,15 +242,15 @@ uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 
 [[FillArrays]]
 deps = ["LinearAlgebra", "Random", "SparseArrays", "Statistics"]
-git-tree-sha1 = "192cee6de045c39e26f4ce4b7e0f00a9dae14dd1"
+git-tree-sha1 = "f0af9b12329a637e8fba7d6543f915fff6ba0090"
 uuid = "1a297f60-69ca-5386-bcde-b61e274b549b"
-version = "1.4.1"
+version = "1.4.2"
 
 [[Flux]]
 deps = ["Adapt", "ChainRulesCore", "Functors", "LinearAlgebra", "MLUtils", "MacroTools", "NNlib", "OneHotArrays", "Optimisers", "Preferences", "ProgressLogging", "Random", "Reexport", "SparseArrays", "SpecialFunctions", "Statistics", "Zygote"]
-git-tree-sha1 = "82b99a066bbe4d227a3837c2fd32e8cefc1e6ce9"
+git-tree-sha1 = "e0a829d77e750a916a52df71b82fde7f6b336a92"
 uuid = "587475ba-b771-5e3f-ad9e-33799f191a9c"
-version = "0.14.0"
+version = "0.14.1"
 
     [Flux.extensions]
     FluxAMDGPUExt = "AMDGPU"
@@ -347,9 +347,9 @@ version = "0.2.4"
 
 [[KernelAbstractions]]
 deps = ["Adapt", "Atomix", "InteractiveUtils", "LinearAlgebra", "MacroTools", "PrecompileTools", "Requires", "SparseArrays", "StaticArrays", "UUIDs", "UnsafeAtomics", "UnsafeAtomicsLLVM"]
-git-tree-sha1 = "6d08ca80b621635fed9cdfeb9a4280a574020bf3"
+git-tree-sha1 = "4c5875e4c228247e1c2b087669846941fb6e0118"
 uuid = "63c18a36-062a-441e-b654-da1e3ab1ce7c"
-version = "0.9.7"
+version = "0.9.8"
 
     [KernelAbstractions.extensions]
     EnzymeExt = "EnzymeCore"
@@ -519,14 +519,14 @@ version = "0.5.5+0"
 
 [[Optimisers]]
 deps = ["ChainRulesCore", "Functors", "LinearAlgebra", "Random", "Statistics"]
-git-tree-sha1 = "6a01f65dd8583dee82eecc2a19b0ff21521aa749"
+git-tree-sha1 = "16776280310aa5553c370b9c7b17f34aadaf3c8e"
 uuid = "3bd65402-5787-11e9-1adc-39752487f4e2"
-version = "0.2.18"
+version = "0.2.19"
 
 [[OrderedCollections]]
-git-tree-sha1 = "d321bf2de576bf25ec4d3e4360faca399afca282"
+git-tree-sha1 = "2e73fe17cac3c62ad1aebe70d44c963c3cfdc3e3"
 uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
-version = "1.6.0"
+version = "1.6.2"
 
 [[PDMats]]
 deps = ["LinearAlgebra", "SparseArrays", "SuiteSparse"]
@@ -596,11 +596,11 @@ uuid = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
 
 [[RLTypes]]
 deps = ["Parameters", "StatsBase"]
-git-tree-sha1 = "12e98e4b5dab0ad089f506509b12b34208beccd2"
+git-tree-sha1 = "7bc4d19b2b8d7fc8685e32370659d179f286ae5d"
 repo-rev = "main"
 repo-url = "https://github.com/SvenDuve/RLTypes.jl"
 uuid = "caff8df6-c124-4ea5-aa40-27805766b7ca"
-version = "1.0.0-DEV"
+version = "1.0.0"
 
 [[Random]]
 deps = ["SHA", "Serialization"]
@@ -690,9 +690,9 @@ version = "0.1.15"
 
 [[StaticArrays]]
 deps = ["LinearAlgebra", "Random", "StaticArraysCore"]
-git-tree-sha1 = "fffc14c695c17bfdbfa92a2a01836cdc542a1e46"
+git-tree-sha1 = "9cabadf6e7cd2349b6cf49f1915ad2028d65e881"
 uuid = "90137ffa-7385-5640-81b9-e52037218182"
-version = "1.6.1"
+version = "1.6.2"
 weakdeps = ["Statistics"]
 
     [StaticArrays.extensions]
@@ -776,10 +776,10 @@ deps = ["InteractiveUtils", "Logging", "Random", "Serialization"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[Transducers]]
-deps = ["Adapt", "ArgCheck", "BangBang", "Baselet", "CompositionsBase", "DefineSingletons", "Distributed", "InitialValues", "Logging", "Markdown", "MicroCollections", "Requires", "Setfield", "SplittablesBase", "Tables"]
-git-tree-sha1 = "a66fb81baec325cf6ccafa243af573b031e87b00"
+deps = ["Adapt", "ArgCheck", "BangBang", "Baselet", "CompositionsBase", "ConstructionBase", "DefineSingletons", "Distributed", "InitialValues", "Logging", "Markdown", "MicroCollections", "Requires", "Setfield", "SplittablesBase", "Tables"]
+git-tree-sha1 = "53bd5978b182fa7c57577bdb452c35e5b4fb73a5"
 uuid = "28d57a85-8fef-5791-bfe6-a80928e7c999"
-version = "0.4.77"
+version = "0.4.78"
 
     [Transducers.extensions]
     TransducersBlockArraysExt = "BlockArrays"
