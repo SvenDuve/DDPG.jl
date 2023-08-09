@@ -256,9 +256,10 @@ function renderEnv(environment::ContinuousEnvironment, policy, seed=42)
     gym = pyimport("gymnasium")
     
     if environment isa LunarLanderContinuous
-        global env = gym.make("LunarLander-v2", continuous = true, render_mode="human")
+        # global env = gym.make("LunarLander-v2", continuous = true, render_mode="human")
+        global env = gym.make("LunarLander-v2", continuous = true)
     elseif environment isa Pendulum
-        global env = gym.make("Pendulum-v1", render_mode="human")
+        global env = gym.make("Pendulum-v1")
     else
         println("Environment not supported")
     end
@@ -278,7 +279,7 @@ function renderEnv(environment::ContinuousEnvironment, policy, seed=42)
 
         append!(R, r)
 
-        sleep(0.05)
+        # sleep(0.05)
         s = s´
         notSolved = !t
     end
