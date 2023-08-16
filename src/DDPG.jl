@@ -250,16 +250,20 @@ end
 
 
 
+"""
+    renderEnv(environment::ContinuousEnvironment, policy, seed=42)
 
+Renders a continuous environment with the given policy.
+"""
 function renderEnv(environment::ContinuousEnvironment, policy, seed=42)
 
     gym = pyimport("gymnasium")
     
     if environment isa LunarLanderContinuous
-        # global env = gym.make("LunarLander-v2", continuous = true, render_mode="human")
-        global env = gym.make("LunarLander-v2", continuous = true)
+        global env = gym.make("LunarLander-v2", continuous = true, render_mode="human")
+        # global env = gym.make("LunarLander-v2", continuous = true)
     elseif environment isa Pendulum
-        global env = gym.make("Pendulum-v1")
+        global env = gym.make("Pendulum-v1", rende_mode="human")
     else
         println("Environment not supported")
     end
