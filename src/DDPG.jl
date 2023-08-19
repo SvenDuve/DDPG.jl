@@ -125,7 +125,6 @@ Main DDPG Algorithm to train an agent.
 function agent(environment::ContinuousEnvironment, agentParams::AgentParameter)
 
     gym = pyimport("gymnasium")
-    # gym = pyimport("gym")
     
     if environment isa LunarLanderContinuous
         global env = gym.make("LunarLander-v2", continuous=true)
